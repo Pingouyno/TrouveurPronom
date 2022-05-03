@@ -28,7 +28,7 @@ def find_entry(name, dict):
 def find_hashed_index(name, dict):
     big_number = 0
     for c in name.lower():
-        stripped = strip_accents(c.lower())
+        stripped = strip_accents(c)
         big_number += ord(stripped)
     big_number = big_number % len(dict[stripped]) - 1
     return big_number
@@ -46,7 +46,7 @@ def main():
         print(find_entry(prenom, dict_animals))
 
     for nom in noms:
-        print(find_entry(noms, dict_adjectives))
+        print(find_entry(nom, dict_adjectives))
 
 if __name__ == "__main__":
     main()
